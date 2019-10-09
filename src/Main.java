@@ -14,8 +14,8 @@ public class Main
 		{
 			try
 			{
-				totalMilesDriven = Main.getMilesDriven(in);
-				totalGasUsed = Main.getGallonsUsed(in);
+				totalMilesDriven += Main.getMilesDriven(in);
+				totalGasUsed += Main.getGallonsUsed(in);
 			}
 			catch (NegativeNumberException exp)
 			{
@@ -23,7 +23,7 @@ public class Main
 			}
 			catch (Exception exp)
 			{
-				
+				break;
 			}
 			finally
 			{
@@ -31,12 +31,15 @@ public class Main
 			}
 			
 		}
+		
+		System.out.println("Total miles driven: " + totalMilesDriven);
+		System.out.println("Total gas used: " + totalGasUsed);
 
 	}
 	
 	public static int getMilesDriven(Scanner in) throws NegativeNumberException
 	{
-		System.out.print("Enter the number of miles driven");
+		System.out.println("Enter the number of miles driven:");
 		
 		int input;
 		
